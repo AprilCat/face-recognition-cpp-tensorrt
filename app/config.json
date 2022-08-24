@@ -2,7 +2,7 @@
     "database_path": "test.db",
     "input_frameWidth": 640,
     "input_frameHeight": 480,
-    "det_engine": "../../weight/retina-mobile0.25-288x320-b1-fp16.engine",
+    "det_engine": "/home/nephilim/lab/face-recognition-cpp-tensorrt/conversion/retina/retina-mobile0.25-288x320-b1-fp16.engine",
     "det_inputName": "input_det",
     "det_outputNames": ["output_det0", "output_det1"],
     "det_inputShape": [3, 288, 320],
@@ -10,7 +10,7 @@
     "det_threshold_nms": 0.4,
     "det_threshold_bbox": 0.6,
     "det_maxFacesPerScene": 4,
-    "rec_engine": "../../weight/arcface-ir50_asia-112x112-b1-fp16.engine",
+    "rec_engine": "/home/nephilim/lab/face-recognition-cpp-tensorrt/conversion/arcface/arcface-ir50_asia-112x112-b1-fp16.engine",
     "rec_inputName": "input",
     "rec_outputName": "output",
     "rec_inputShape": [3, 112, 112],
@@ -18,7 +18,7 @@
     "rec_maxBatchSize": 1,
     "rec_knownPersonThreshold": 0.65,
     "gen": false,
-    "gen_imgSource": "/data",
+    "gen_imgSource": "/home/nephilim/lab/face-recognition-cpp-tensorrt/imgs",
     "gen_imgIsCropped": true,
     "api_imgIsCropped": true
 }

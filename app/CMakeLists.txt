@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 set(PROJECT_NAME app)
 project(${PROJECT_NAME})
 set (CMAKE_CXX_STANDARD 11)
-
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
 # OpenCV
 message(STATUS "Finding OpenCV...")
 find_package(OpenCV REQUIRED)
@@ -90,6 +90,12 @@ list(POP_BACK CMAKE_MESSAGE_INDENT)
 AUX_SOURCE_DIRECTORY(../src SRC)
 list(REMOVE_ITEM SRC "../src/main.cpp" "../src/webclient.h" "../src/webclient.cpp")
 message(STATUS "SOURCE FILES: ${SRC}")
+include_directories(
+	/usr/local/cuda/targets/x86_64-linux/include
+	)
+link_directories(
+	/usr/local/cuda/targets/x86_64-linux/lib
+	)
 cuda_add_executable(${PROJECT_NAME} ${SRC})
 target_link_libraries(${PROJECT_NAME}
     ${OpenCV_LIBS}

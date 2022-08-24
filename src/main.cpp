@@ -39,7 +39,7 @@ int main(int argc, const char **argv) {
 
         // visualization
         cv::Mat frame1;
-        path = "../../imgs/1.jpg";
+        path = "../../imgs/kmq.jpg";
         frame1 = cv::imread(path.c_str());
         cv::hconcat(frame1, frame, frame);
         cv::resize(frame, frame, cv::Size(448, 224));
